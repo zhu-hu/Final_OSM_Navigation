@@ -1,2 +1,2 @@
-# OSM_Navigation
+# Final OSM Navigation
 Master's thesis project
