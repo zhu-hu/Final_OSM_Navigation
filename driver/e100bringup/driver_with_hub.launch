@@ -1,0 +1,9 @@
+<launch>
+
+<include file = "$(find nmea_navsat_driver)/launch/strong_gps.launch"/>
+<include file = "$(find xsens_mti_driver)/launch/xsens_mti_node.launch"/>
+<include file = "$(find lkusbcan)/launch/lcan_read_write.launch"/>
+<include file = "$(find canparser)/launch/can_encoder_decoder.launch"/>
+<include file = "$(find livox_ros_driver)/launch/livox_hub_all.launch"/> 
+<include file = "$(find cmd2e100can)/launch/cmd2e100can.launch"/>
+</launch>

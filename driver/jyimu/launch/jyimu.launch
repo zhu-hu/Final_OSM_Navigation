@@ -1,0 +1,8 @@
+<!-- start imu read -->
+<launch>
+
+	<node pkg="jyimu" name="jyimu" type="jyimu" output="screen">
+	  <param name="imu_port_name" value="/dev/IMU_SERIAL_PORT"/> 
+	</node>
+
+</launch>

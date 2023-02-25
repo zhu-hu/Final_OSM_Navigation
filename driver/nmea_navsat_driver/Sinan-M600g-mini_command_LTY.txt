@@ -1,0 +1,58 @@
+﻿//默认com1口配置命令，默认波特率115200
+//设置差分数据端口
+//默认com1口配置命令，默认波特率115200
+freset
+tst gprsmsg on
+set datalink gprs on
+tst connect com2 gprs
+interfacemode gprs auto auto on
+set datalink gprs cors param CMNET rtk.ntrip.qxwz.com 8002 TCP Client
+set datalink gprs cors srctable RTCM32_GGB cyber005 c492e9c
+//关闭gprs调试信息
+tst gprsmsg off
+log com1 gpgga ontime 0.1
+//报文输出设置 最高频率20Hz
+//常见的报文输出
+//GGA-经纬度高程   headinga-角度 bestvela-速度
+//更多报文及解析参考常用报文解释
+set cpufreq 624
+set rtkfreq 10
+set pvtfreq 10
+//保存设置
+saveconfig
+
+//报文输出设置 最高频率20Hz
+//常见的报文输出
+//GGA-经纬度高程   headinga-角度 bestvela-速度
+//更多报文及解析参考常用报文解释
+//log com1 gpgga ontime 0.05
+//log com1 headinga ontime 0.05
+//log com1 bestvela ontime 0.05
+
+//保存设置
+//saveconfig
+
+//复位
+//freset
+
+//惯导
+//默认是开着惯导辅助定位的
+//首先是长时间高精度的输出
+//而后可能卫星情况很差，但仍能维持很好的输出解。
+//E后边的标志位是6的时候代表惯导增强的结果。
+
+
+//更改串口波特率
+//X为1或者3代指串口1或者串口3 
+//串口波特率支持标准串口波特率 最小为9600，最大支持921600
+//com comX 115200
+
+
+//查看固件版本
+//log version
+
+//查看功能注册
+//log reglista
+
+//查询注册码
+//log regsource

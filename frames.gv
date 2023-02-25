@@ -1,0 +1,9 @@
+digraph G {
+"world" -> "base_link"[label="Broadcaster: /Planing\nAverage rate: 10.203 Hz\nMost recent transform: 1651851280.737 ( 0.091 sec old)\nBuffer length: 4.900 sec\n"];
+"world" -> "global_map"[label="Broadcaster: /DSMap\nAverage rate: 50.204 Hz\nMost recent transform: 1651851280.820 ( 0.008 sec old)\nBuffer length: 4.980 sec\n"];
+"base_link" -> "local_map"[label="Broadcaster: /tf_base_link2local_map\nAverage rate: 49.722 Hz\nMost recent transform: 1651851280.836 ( -0.008 sec old)\nBuffer length: 4.968 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1651851280.828"[ shape=plaintext ] ;
+ }->"world";
+}

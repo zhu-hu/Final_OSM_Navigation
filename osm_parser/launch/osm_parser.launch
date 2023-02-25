@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+  <master auto="start"/>
+<!-- botanicka.osm
+fei.osm
+park_ludovita_stura_2_zaloha.osm
+park_ludovita_stura_2.osm
+park_ludovita_stura.osm
+sad_janka_krala.osm
+sjtu.osm
+skuska.osm
+dongqu.osm -->
+<!-- yueyawan.osm
+dianyuan.osm
+centernet.osm 
+sjtu_dongqu.osm  -->
+  <arg name="osm_map_path" default="$(find osm_parser)/data/centernet.osm"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find osm_parser)/rviz/rviz_dongqu_utm.rviz" required="true"/>
+
+  <node pkg="osm_parser" type="osm_parser_node" respawn="false" name="osm_parser_node" output="screen">
+      <param name="osm_map_path" value="$(arg osm_map_path)"/>
+      <rosparam file="$(find osm_parser)/config/osm_parser.yaml" command="load" />
+  </node>
+
+
+</launch>

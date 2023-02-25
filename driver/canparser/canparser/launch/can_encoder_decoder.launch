@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="canparser" type="candecoder" name="candecoder" output="screen"/>
+</launch>

@@ -1,0 +1,102 @@
+# #柳州基地参数
+# localization_debug: true
+# use_steer: false
+# gps_err_fix: 0.005
+# gps_yaw_err_fix: 0.008
+# slam_err_fix: 0.04
+# slam_err_normal: 0.04
+# slam_yaw_err_fix: 0.01
+# slam_yaw_err_normal: 0.01
+# slam_fix_param: 0.15
+# slam_error_param: 0.1
+# speed_err: 0.001
+# imu_err: 0.004
+# car_heading_error: 0.005
+# cali_x_: 0
+# cali_y_: 0
+
+# err_cnt: 500 #gps错误时间累计 单位:1s/gps频率
+
+# GLOBAL_ZERO_X_: 355000
+# GLOBAL_ZERO_Y_: 2700000
+# GLOBAL_ZERO_Z_: 12
+# utm_origin_band: 82
+# utm_origin_zone: 49
+
+# localization_region: liuzhou
+
+# TRANS_THRED: 0.8
+# ROTA_THRED: 0.08
+# LOCALIZATION_FAIL_NUM_: 8
+
+# enable_manual_reset: false #失效检测模块 false:关闭 true:开启
+
+
+#----------------------------------------------------------------------------------------
+#青岛基地参数
+# localization_debug: true
+# use_steer: false
+# gps_err_fix: 0.005
+# gps_yaw_err_fix: 0.008
+# slam_err_fix: 0.01
+# slam_err_normal: 0.01
+# slam_yaw_err_fix: 0.01
+# slam_yaw_err_normal: 0.01
+# slam_fix_param: 0.15
+# slam_error_param: 0.1
+# speed_err: 0.001
+# imu_err: 0.004
+# car_heading_error: 0.01
+# cali_x_: 0
+# cali_y_: 0
+
+# err_cnt: 500 #gps错误时间累计 单位:1s/gps频率
+
+# GLOBAL_ZERO_X_: 246161
+# GLOBAL_ZERO_Y_: 3988283
+# GLOBAL_ZERO_Z_: 12
+# utm_origin_band: 83
+# utm_origin_zone: 51
+
+# localization_region: qingdao
+
+# TRANS_THRED: 0.7
+# ROTA_THRED: 0.07
+# LOCALIZATION_FAIL_NUM_: 8
+
+# enable_manual_reset: false #失效检测模块 false:关闭 true:开启
+
+
+#----------------------------------------------------------------------------------------
+#SJTU参数
+localization_debug: true
+use_steer: false
+gps_err_fix: 0.005
+gps_yaw_err_fix: 0.008
+slam_err_fix: 0.01
+slam_err_normal: 0.01
+slam_yaw_err_fix: 0.01
+slam_yaw_err_normal: 0.01
+slam_fix_param: 0.15
+slam_error_param: 0.1
+speed_err: 0.001
+imu_err: 0.004
+car_heading_error: 0.01
+cali_x_: -0.46
+cali_y_: 0.32
+
+err_cnt: 500 #gps错误时间累计 单位:1s/gps频率
+
+GLOBAL_ZERO_X_: 349350
+GLOBAL_ZERO_Y_: 3432459
+GLOBAL_ZERO_Z_: 12
+utm_origin_band: 82
+utm_origin_zone: 51
+
+localization_region: SJTU
+
+TRANS_THRED: 0.7
+ROTA_THRED: 0.07
+LOCALIZATION_FAIL_NUM_: 8
+
+enable_manual_reset: false #失效检测模块 false:关闭 true:开启

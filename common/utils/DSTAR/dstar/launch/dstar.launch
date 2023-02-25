@@ -1,0 +1,8 @@
+<launch>
+	<node pkg = "tf" type = "static_transform_publisher" name="tf_base_link2local_map" args="-20.0 25.0 0 0 0 -0.707 0.707 base_link local_map 20"></node>        
+	<!--node pkg = "dstar" type = "dstar" name = "dstar" ></node-->
+	<!--node pkg = "dstar_map" type = "dstar_map" name = "dstar_map" respawn = "true"></node-->	
+	<!--启动RRT-->
+	<!--include file = "$(find rrt)/launch/all_rrt.launch" /-->
+</launch>
+

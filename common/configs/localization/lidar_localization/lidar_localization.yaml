@@ -1,0 +1,180 @@
+# # 宝骏参数
+# map_file_name: liuzhou_baojun/grid_mapbj09_v1.0 #地图文件夹的名字
+# use_traj_heading: false #是否使用轨迹预测航向（在航向角不准，切换位置为直线处使用
+# restart_mode: true #是否在定位失效的时候在gps区域重启
+
+# voxelgrid_filter_size: 0.3 #点云滤波参数
+
+# delay_num_: 2 #gps切换slam的延时帧数
+
+# cloud_boudingbox: #点云数据截取范围
+#   cloud_boundingbox_max_x: 100
+#   cloud_boundingbox_min_x: -100
+#   cloud_boundingbox_max_y: 100
+#   cloud_boundingbox_min_y: -100
+#   cloud_boundingbox_max_z: 8
+#   cloud_boundingbox_min_z: 2
+
+# has_CL: false #此模式为河西基地ioc定制模式,其他区域勿使用
+
+# loc_cloud_boudingbox: #点云数据截取范围
+#   loc_cloud_boundingbox_max_x: 100
+#   loc_cloud_boundingbox_min_x: -100
+#   loc_cloud_boundingbox_max_y: 100
+#   loc_cloud_boundingbox_min_y: -100
+#   loc_cloud_boundingbox_max_z: 5.8
+#   loc_cloud_boundingbox_min_z: 3
+
+# lidar_to_vehicle: #激光雷达和车辆的标定关系
+#   lidar_to_vehicle_x: 0.0
+#   lidar_to_vehicle_y: 0.0
+#   lidar_to_vehicle_z: 0.0
+#   lidar_to_vehicle_rx: 0.0
+#   lidar_to_vehicle_ry: 0.0
+#   lidar_to_vehicle_rz: 0.0
+
+# gps_to_vehicle: #gps和车辆的标定关系
+#   gps_to_vehicle_x: 0
+#   gps_to_vehicle_y: 0
+
+
+#----------------------------------------------------------------------------------------
+# #河西基地参数
+# map_file_name: liuzhou_hexi/grid_map #地图文件夹的名字
+# use_traj_heading: false #是否使用轨迹预测航向（在航向角不准，切换位置为直线处使用
+# restart_mode: true #是否在定位失效的时候在gps区域重启
+
+# voxelgrid_filter_size: 0.1 #点云滤波参数
+
+# delay_num_: 7 #gps切换slam的延时帧数
+
+# cloud_boudingbox: #点云数据截取范围
+#   cloud_boundingbox_max_x: 100
+#   cloud_boundingbox_min_x: -100
+#   cloud_boundingbox_max_y: 100
+#   cloud_boundingbox_min_y: -100
+#   cloud_boundingbox_max_z: 5.03
+#   cloud_boundingbox_min_z: 2
+
+# has_CL: true #此模式为河西基地ioc定制模式,其他区域勿使用
+
+# loc_cloud_boudingbox: #点云数据截取范围
+#   loc_cloud_boundingbox_max_x: 100
+#   loc_cloud_boundingbox_min_x: -100
+#   loc_cloud_boundingbox_max_y: 100
+#   loc_cloud_boundingbox_min_y: -100
+#   loc_cloud_boundingbox_max_z: 5.8
+#   loc_cloud_boundingbox_min_z: 3
+
+# lidar_to_vehicle: #激光雷达和车辆的标定关系
+#   lidar_to_vehicle_x: 0.0
+#   lidar_to_vehicle_y: 0.0
+#   lidar_to_vehicle_z: 0.0
+#   lidar_to_vehicle_rx: 0.0
+#   lidar_to_vehicle_ry: 0.0
+#   lidar_to_vehicle_rz: 0.0
+
+# gps_to_vehicle: #gps和车辆的标定关系
+#   gps_to_vehicle_x: 0
+#   gps_to_vehicle_y: 0
+
+
+#---------------------------------------------------------------------------------------
+# #青岛基地参数
+# map_file_name: qingdao/grid_map #地图文件夹的名字
+# use_traj_heading: false #是否使用轨迹预测航向（在航向角不准，切换位置为直线处使用
+# restart_mode: true #是否在定位失效的时候在gps区域重启
+
+# voxelgrid_filter_size: 0.3 #点云滤波参数
+
+# delay_num_: 7 #gps切换slam的延时帧数
+
+# cloud_boudingbox: #点云数据截取范围
+#   cloud_boundingbox_max_x: 100
+#   cloud_boundingbox_min_x: -100
+#   cloud_boundingbox_max_y: 100
+#   cloud_boundingbox_min_y: -100
+#   cloud_boundingbox_max_z: 8
+#   cloud_boundingbox_min_z: 2
+
+# has_CL: false #此模式为河西基地ioc定制模式,其他区域勿使用
+
+# loc_cloud_boudingbox: #点云数据截取范围
+#   loc_cloud_boundingbox_max_x: 100
+#   loc_cloud_boundingbox_min_x: -100
+#   loc_cloud_boundingbox_max_y: 100
+#   loc_cloud_boundingbox_min_y: -100
+#   loc_cloud_boundingbox_max_z: 5.8
+#   loc_cloud_boundingbox_min_z: 3
+
+# lidar_to_vehicle: #激光雷达和车辆的标定关系
+#   lidar_to_vehicle_x: 0.0
+#   lidar_to_vehicle_y: 0.0
+#   lidar_to_vehicle_z: 0.0
+#   lidar_to_vehicle_rx: 0.0
+#   lidar_to_vehicle_ry: 0.0
+#   lidar_to_vehicle_rz: 0.0
+
+# gps_to_vehicle: #gps和车辆的标定关系
+#   gps_to_vehicle_x: 0
+#   gps_to_vehicle_y: 0
+
+
+#----------------------------------------------------------------------------------------
+#SJTU参数
+map_file_name: SJTU/grid_map #地图文件夹的名字
+use_traj_heading: false #是否使用轨迹预测航向（在航向角不准，切换位置为直线处使用
+restart_mode: true #是否在定位失效的时候在gps区域重启
+
+voxelgrid_filter_size: 0.1 #点云滤波参数
+
+delay_num_: 7 #gps切换slam的延时帧数
+
+cloud_boudingbox: #点云数据截取范围
+  cloud_boundingbox_max_x: 50
+  cloud_boundingbox_min_x: -50
+  cloud_boundingbox_max_y: 100
+  cloud_boundingbox_min_y: -100
+  cloud_boundingbox_max_z: 20
+  cloud_boundingbox_min_z: 3
+has_CL: false #此模式为河西基地ioc定制模式,其他区域勿使用
+
+loc_cloud_boudingbox: #点云数据截取范围
+  loc_cloud_boundingbox_max_x: 100
+  loc_cloud_boundingbox_min_x: -100
+  loc_cloud_boundingbox_max_y: 100
+  loc_cloud_boundingbox_min_y: -100
+  loc_cloud_boundingbox_max_z: 20
+  loc_cloud_boundingbox_min_z: 3
+
+lidar_to_vehicle: #激光雷达和车辆的标定关系
+  lidar_to_vehicle_x: 0.0
+  lidar_to_vehicle_y: 0.0
+  lidar_to_vehicle_z: 0.0
+  lidar_to_vehicle_rx: 0.0
+  lidar_to_vehicle_ry: 0.0
+  lidar_to_vehicle_rz: 0.0
+
+gps_to_vehicle: #gps和车辆的标定关系
+  gps_to_vehicle_x: 0
+  gps_to_vehicle_y: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

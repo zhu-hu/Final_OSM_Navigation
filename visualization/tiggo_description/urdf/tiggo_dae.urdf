@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot
+  name="tiggo_description">
+  <link name="base_link">
+    <visual>
+      <origin xyz="1 0 0" rpy="1.57 0 4.71" />
+      <geometry>
+        <mesh filename="package://tiggo_description/meshes/sjtu_white.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+  </link>
+</robot>

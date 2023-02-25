@@ -1,0 +1,34 @@
+{
+    "hub_config": {
+        "broadcast_code": "13UUG4L004000G0",
+        "enable_connect": true,
+        "coordinate": 0
+    },
+    "lidar_config": [
+        {
+            "broadcast_code": "3GGDH5700101031",
+            "return_mode": 0,
+            "imu_rate": 1
+        },
+        {
+            "broadcast_code": "3GGDH5700101051",
+            "return_mode": 0,
+            "imu_rate": 1
+        },
+        {
+            "broadcast_code": "3GGDH5700101091",
+            "return_mode": 0,
+            "imu_rate": 1
+        },
+        {
+            "broadcast_code": "3GGDH5700101761",
+            "return_mode": 0,
+            "imu_rate": 1
+        },
+        {
+            "broadcast_code": "3GGDH5700101861",
+            "return_mode": 0,
+            "imu_rate": 1
+        }
+    ]
+}

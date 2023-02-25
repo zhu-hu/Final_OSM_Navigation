@@ -1,0 +1,5 @@
+<launch>
+	<node pkg = "tf" type = "static_transform_publisher" name="tf_base_link2local_map" args="-10.0 10.0 0 0 0 -0.707 0.707 base_link local_map 20"></node>
+    <node pkg = "grid_map_vis" type = "grid_map_vis" name = "tf_world2base_link" output="screen"></node>
+</launch>
+

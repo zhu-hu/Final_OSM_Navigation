@@ -1,0 +1,10 @@
+<!-- pplqr_back_controller -->
+<launch>
+	<node pkg="pplqr_back_controller" type="path_pub" name="path_pub" output="screen">
+        <param name="use_laser_result" value="true"/>
+        <param name="package_path" value="$(find pplqr_back_controller)/data/"/>
+	    <param name="show_real_path" value="true"/>
+    </node>
+
+    <node pkg="rviz" type="rviz" name="path_pub_rviz" args="-d $(find pplqr_back_controller)/rviz/back_path_rviz.rviz"/>
+</launch>

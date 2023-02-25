@@ -1,0 +1,10 @@
+<launch>
+    <!--启动汽车模型-->
+    <arg name="model" />
+    <arg name="gui" default="False" />
+    <param name="robot_description" textfile="$(find tiggo_description)/urdf/tiggo_stl.urdf" />
+    <param name="use_gui" value="$(arg gui)"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+</launch>
+

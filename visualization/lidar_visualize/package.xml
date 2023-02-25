@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lidar_visualize</name>
+  <version>0.0.0</version>
+  <description>The lidar visualize package</description>
+
+  <maintainer email="zhangw6338@sjtu.edu.cn">zw</maintainer>
+
+  <license>BSD</license>
+
+  <url></url>
+
+  <author email="zhangw6338@sjtu.edu.cn">zw</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>cyber_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_export_depend>cyber_msgs</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>visualization_msgs</build_export_depend>
+  <exec_depend>cyber_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+
+</package>

@@ -1,0 +1,15 @@
+<launch>
+  <node pkg="lidar_perception" type="near_safe" name="near_safe" output="screen">
+    <!-- topic input -->
+    <param name="in_point_cloud_topic" type="str" value="/driver/livox/point_cloud" />
+    <param name="in_imu_topic" type="str" value="/driver/imu" />
+    <param name="in_speed_topic" type="str" value="/e100/speed_feedback" />
+    <!-- topic output -->
+    <param name="out_emergency_topic" type="str" value="/perception/emergency" />
+    <!-- parameters from parameters.yaml file -->
+    <rosparam file="$(find configs)/perception/perception_params.yaml" command="load" />
+    <!-- debug -->
+    <param name="debug" type="bool" value="true" />
+  </node>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find lidar_visualize)/rviz/near_safe.rviz" />
+</launch>

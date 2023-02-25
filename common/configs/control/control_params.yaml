@@ -1,0 +1,33 @@
+Min_ref_speed: 12.5
+K_ref_0_20: 0.8
+K_ref_20_40: 0.5
+K_ref_40_60: 0.2
+Kp_error: 0.25
+Ki_error: 0.05
+filter_param: 0.6
+Kp_wheel: 8000.0
+wheelbase: 1.750
+# wheel_max: 3800
+# wheel_zero: 200
+uturn_wheel_max: 4300.0
+Straight_preview_dis: 10.0
+TurnRight_preview_dis: 5.0
+TurnLeft_preview_dis: 4.0
+Uturn_preview_dis: 2.5
+Parking_preview_dis: 3.0
+Launch_preview_dis: 7.0
+RRT_preview_dis: 5.0
+
+speed_kp: 200.0
+speed_ki: 3.0
+speed_kd: 0.0
+speed_kv: 25.0
+speed_ka: 400.0
+speed_max: 30.0
+speed_min: 5.0
+emergency_slow_brake: 20
+emergency_stop_brake: 30
+eps_distance: 1.0
+eps_angle: 0.523598
+filter_cmd: 0.25
+filter_brake_cmd: 0.25

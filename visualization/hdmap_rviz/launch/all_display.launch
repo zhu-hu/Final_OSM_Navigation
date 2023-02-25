@@ -1,0 +1,10 @@
+<launch>
+    <!--启动汽车模型显示模块-->
+    <include file = "$(find tiggo_description)/launch/display.launch" />
+    <!--启动地图,路径模块-->
+    <include file = "$(find hdmap_rviz)/launch/hdmap_full_rviz.launch" />
+    <!--启动Grid Map显示模块-->
+    <include file = "$(find grid_map_vis)/launch/run.launch" />
+    <!--启动RVIZ-->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find hdmap_rviz)/rviz/all.rviz" />
+</launch>

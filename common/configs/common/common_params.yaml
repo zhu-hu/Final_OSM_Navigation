@@ -1,0 +1,20 @@
+region: LiuZhou # LiuZhou QingDao
+route: NET_CENTER # HX1819 HX20 HX29 QD01 QD02 BJ10 BJ12 BJ13
+vehicle:
+  number: 01
+  model: E100 # E50 E100 E300 E300Plus
+  size:
+    width: 1.506
+    length: 2.488
+    height: 1.670
+    wheel_base: 1.600
+    rear_to_back: 0.44
+    trailer_length: 4.0
+  wheel_max: 5800.0
+  wheel_zero: 350.0
+  turning_radius: 6.0
+hardware:
+  lidar: Mid70 # Mid70 Mid100
+  imu: Asensing # Asensing Xsense
+  gps: Asensing # Asensing Unistrong
+  can: LCminiPCIe-432

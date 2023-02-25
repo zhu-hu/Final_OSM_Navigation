@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="hdmap" name="hdmap_test_node" type="hdmap_test_node" output="screen">
+	</node>
+</launch>

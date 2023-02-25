@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/trouble_shooting.dir/main.cpp.o  -o trouble_shooting -rdynamic ../../sdk_core/liblivox_sdk_static.a -lapr-1 

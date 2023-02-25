@@ -1,0 +1,6 @@
+<!-- controller -->
+<launch>
+	<node pkg="local_steer_controller" type="local_pure_pursuit" name="local_pure_pursuit" output="screen">
+		<rosparam file="$(find local_steer_controller)/params/control_params.yaml" command="load"/>
+	</node>
+</launch>

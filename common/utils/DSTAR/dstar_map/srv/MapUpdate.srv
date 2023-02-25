@@ -1,0 +1,8 @@
+bool init
+int64 map_length
+int64 goal_x
+int64 goal_y
+float64 goal_theta
+dstar_map/CellUpdateList data
+---
+bool ok

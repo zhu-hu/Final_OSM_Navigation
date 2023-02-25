@@ -1,0 +1,87 @@
+lidar_preprocess: # 点云数据预处理(以下参数均定义在车辆坐标系下，正x轴指向车前，正y轴指向车左，正z轴指向车顶，符合右手定则，单位均为m，参数调节请使用可视化点云)
+  near_roi: # 近端自车反射产生的噪点范围，范围之内的点云直接滤除，x轴[-1.25,2.30],y轴[-0.40,0.40]
+    near_noise_x_min: -1.25
+    near_noise_x_max: 2.30
+    near_noise_y_min: -0.40
+    near_noise_y_max: 0.40
+  trailer_noise: # 由于后方拖挂车反射产生的噪点范围，范围之内的点云直接滤除，其中trailer_x_max = near_noise_x_min，x轴[-1.70,-1.25]，y轴[-1.30,1.30]
+    trailer_x_min: -1.70
+    trailer_y_min: -1.30
+    trailer_y_max: 1.30
+  far_roi: # 水平方向ROI范围，范围之外的点云直接滤除，x轴[-10.00,30.00]，y轴[-10.00,10.00]
+    livox_roi_x_min: -10.00
+    livox_roi_x_max: 30.00
+    livox_roi_y_min: -10.00
+    livox_roi_y_max: 10.00
+  z_roi: # 高度方向ROI范围，范围之外的点云直接滤除，z轴[-0.50,1.40]
+    livox_roi_z_min: -0.30
+    livox_roi_z_max: 1.40
+  near_noise_filter: # 由于大疆雷达自身的缺陷，在近端会产生异常噪点，下面做滤波处理
+    livox_noise_flag: true # 是否进行异常噪点滤波处理，mid100需要，mid70不需要
+    roi: # 定义近端处理范围，范围內的点云会被处理，x轴[-5.00,10.00]，y轴[-6.00,6.00]
+      livox_noise_x_min: -5.00
+      livox_noise_x_max: 10.00
+      livox_noise_y_min: -6.00
+      livox_noise_y_max: 6.00
+    rate: # 调节阈值，阈值过大会滤除正常点，阈值过小会残留噪点，调节范围[0.0010, 0.0020]
+      livox_noise_rate: 0.0015
+    min_direct_remove_intensity: 1.0 # 近处雨水噪点利用强度直接去除阈值，此处理不一定安全，满足要求即可
+  outlier_remove: # 离群点去除
+    min_outlier_intensity: 10.00 # 强度阈值，离群点一般强度低于此值
+    search_radius: 1.00 # 每个点的考察半径，如果考察半径內少于min_neighbors个点，就当做离群点，调节范围[0.80, 2.00]
+    min_neighbors: 5 # 考察半径內最少的近邻点个数，为整数，调节范围[3, 7]
+  frame_merging: # 大疆雷达50ms一帧，这里叠加多帧点云进行处理，此参数不宜过大，满足要求即可，调节范围[4, 8]
+    frame_merging_count: 6 # 注意是整数
+
+ground_segmentation: # 点云预处理中一个子步骤，地面点云滤除
+  n_bins: 25 # 径向栅格个数，为整数，调节范围[20,35]
+  n_segments: 50 # 角度段数，为整数，调节范围[40, 70]
+  gamma_rate: 0.70 # 径向栅格划分形变因子，值越小，近处栅格越密集，远处栅格越稀疏，调节范围[0.4, 1.0]
+  prior_ground_z: 0.00 # 车辆坐标系原点的z坐标
+  max_initial_slope: 0.04 # 初始斜率阈值，值越大越能处理坡度大的地面，但不能过大，容易出现过分割地面，满足要求即可，调节范围[0.03, 0.06]
+  max_slope: 0.02 # 斜率阈值，含义同上，调节范围[0.01,0.03]
+  line_search_segment_num: 3 # 角度段方向搜索邻域范围，不宜过大，满足要求即可，调节范围[1,5]
+  max_dist_to_line: 0.30 # 判断是否为地面阈值，不宜过大，满足要求即可，调节范围[0.20,0.35]
+
+object_segmentation: # 障碍物聚类
+  length_max: 140 # 障碍物长度最大值，默认 140/10=14m
+  width_max: 35 # 障碍物宽度最大值，默认 35/10=3.5m
+  area_max: 4800 # 障碍物面积最大值，默认4800/100=48m^2
+
+grid_map: # 栅格图中相关参数
+  roi_map: # ROI区域栅格图，这里同lidar_preprocess/far_roi中的设置
+    min_x: -10.00
+    max_x: 30.00
+    min_y: -10.00
+    max_y: 10.00
+    pixel_scale: 10 # 栅格图分辨率，1m有10个栅格
+  person_detection: # 行人识别阈值，这里简单靠目标在ROI栅格图中的长宽以及中心点的高度进行识别
+    size_max: 14 # 长宽不能大于14个栅格，即14/10=1.4m，排除大物体，调节范围[13, 16]
+    size_min: 3 # 长宽不能小于3个栅格，即3/10=0.3m，排除小物体，调节范围[1,5]
+    area_max: 100 # 长×宽不能超过100，即100/10^2=1m^2，排除大物体，调节范围[80,150]
+    height_min: 0.60 # 高度超过0.6m，排除低矮物体
+  cone_detection:
+    size_max: 0 # 长宽不能大于3个栅格，即3/10=0.3m，排除大物体，调节范围[1, 3]
+    height_max: 0.60 # 高度不能超过0.6m，排除高物体，调节范围[0.50,0.80]
+    research_dis: 2.00 # 为了避免大物体旁边误检测锥桶，设定锥桶旁2.0m范围內不应该有大物体
+    sur_time: 0.00 # 固定时间，单位s
+    cone_roi: # 锥桶检测范围，x轴[0.00,30.00],y轴[-6.00,6.00]
+      cone_x_min: 0.00
+      cone_x_max: 30.00
+      cone_y_min: -6.00
+      cone_y_max: 6.00
+  tracking: # 动静态物体阈值设置
+    v_threshold: 1.00 # 速度阈值，单位m/s，大于此阈值为动态物体，小于此阈值为静态物体，调节范围[0.5, 2.0]
+    sur_age: 3 # 动态物体存活帧数最小值，否则为静态物体，调节范围[3,7]
+
+near_safe_area: # 近处减速急停保障安全区域
+  merge_count: 5 # 融合帧数目
+  slow_down: # 减速区域
+    x: 2.0 # 车前方2m
+    y: 1.0 # 车左侧1m
+  emergency_stop: # 急停区域
+    x: 1.0 # 车前方1m
+    y: 0.5 # 车左侧0.5m
+  car_info: # 车辆后轴到车前和车左距离
+    x: 2.4
+    y: 0.5

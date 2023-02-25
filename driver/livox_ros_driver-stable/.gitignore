@@ -1,0 +1,9 @@
+
+# ignore dir or file
+./CMakeLists.txt
+#whitelist
+
+
+
+
+\.vscode/

@@ -1,0 +1,4 @@
+std_msgs/Header header
+float64 trip_distance
+float64 trip_left_mileage
+float64 trip_eta

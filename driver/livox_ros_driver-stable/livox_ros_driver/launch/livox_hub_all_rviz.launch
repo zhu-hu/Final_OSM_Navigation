@@ -1,0 +1,12 @@
+<launch>
+	
+    <arg name="bd_list" default="13UUG1F00400160"/>
+    <param name="livox_msg_type" value="0"/>
+
+    <node name="livox_hub_all_publisher" pkg="livox_ros_driver" 
+	      type="livox_hub_all_node" required="true"
+	      output="screen" args="$(arg bd_list)"/>
+
+	<node name="rviz" pkg="rviz" type="rviz" respawn="true"
+	      args="-d $(find livox_ros_driver)/config/display_hub_all_points.rviz"/>
+</launch>

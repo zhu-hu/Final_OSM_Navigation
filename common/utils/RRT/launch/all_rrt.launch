@@ -1,0 +1,42 @@
+<launch>
+        <node pkg = "rrt" type = "grid_map_dialte" name="grid_map_dialte" output="screen"></node>
+       
+        <!--<node pkg = "rrt" type = "rrt" name="rrt1" output="screen" >-->
+             <!--<remap from="/path_rrt" to="/path_rrt1"/>-->
+        <!--</node>-->
+        <node pkg = "rrt" type = "rrt" name="rrt1" >
+                <remap from="/path_rrt" to="/path_rrt1"/>
+        </node>
+        <node pkg = "rrt" type = "rrt" name="rrt2" >
+                <remap from="/path_rrt" to="/path_rrt2"/>
+        </node>
+        <node pkg = "rrt" type = "rrt" name="rrt3" >
+                <remap from="/path_rrt" to="/path_rrt3"/>
+        </node>
+        <node pkg = "rrt" type = "rrt" name="rrt4" >
+                <remap from="/path_rrt" to="/path_rrt4"/>
+        </node>
+        <node pkg = "rrt" type = "rrt" name="rrt5" >
+                <remap from="/path_rrt" to="/path_rrt5"/>
+        </node>
+        <node pkg = "rrt" type = "rrt" name="rrt6" >
+                <remap from="/path_rrt" to="/path_rrt6"/>
+        </node>
+
+
+        <!--<node pkg = "rrt" type = "continue_rrt" name="continue_rrt1" >-->
+             <!--<remap from="/path_continue_rrt" to="/path_continue_rrt1"/>-->
+        <!--</node>-->
+        <!--<node pkg = "rrt" type = "continue_rrt" name="continue_rrt2" >-->
+            <!--<remap from="/path_continue_rrt" to="/path_continue_rrt2"/>-->
+        <!--</node>-->
+        <!--<node pkg = "rrt" type = "continue_rrt" name="continue_rrt3" >-->
+            <!--<remap from="/path_continue_rrt" to="/path_continue_rrt3"/>-->
+        <!--</node>-->
+
+
+        <node pkg = "rrt" type = "rrt_choose" name="rrt_best" output="screen"> </node>
+        <!--<node pkg = "rrt" type = "continue_rrt_choose" name="continue_rrt_best" output="screen"> </node>-->
+        <node pkg = "rrt" type = "combine" name="rrt_combine" output="screen"> </node>
+
+</launch>

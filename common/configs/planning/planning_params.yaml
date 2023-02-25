@@ -1,0 +1,47 @@
+behavior:
+  emergency_stop_area_width: 2.0
+  emergency_stop_area_height: 5.0
+  emergency_stop_grid_count_threshold: 1000
+  emergency_stop_time_count_threshold: 8
+  emergency_speed_down_area_width: 2.4
+  emergency_speed_down_area_height: 6.0
+  emergency_speed_down_grid_count_threshold: 700
+  emergency_speed_down_time_count_threshold: 8
+  protect_area_width: 0.0
+  protect_area_height: 0.0
+  lat_safe_distance_static_obstacle: 0.2
+  invalid_localization_pos_diff_threshold: 0.3
+  stop_interval: 5 # 绕障前观察时间
+
+  max_distance_away_from_path: 10
+  
+  vehicle_width: 1.6     #scale: m
+  vehicle_length: 2.5    #scale: m
+  rear_to_back: 0.35     #scale: m
+  turning_radius: 6.0    #scale: m
+  trailer_length: 2.04   #scale: m
+  wheel_base: 1.6        #scale: m
+
+  desired_planning_speed: 2.0  #scale:mps
+  max_planner_time: 100.0   #scale:ms
+
+  max_lat_sample_nums: 11 #dubins planner　最大横向采样数目
+  max_lon_sample_nums: 7  #dubins planner 最大纵向采样数目
+
+  smoothed_route_path: true #osm_route_planner 是否对全局导引点进行平滑
+  smoothed_range: 1.0       #osm_route_planner 对全局导引点进行平滑时的x,y方向上的容忍范围
+
+speed:
+  desire_speed_lane: 15
+  desire_speed_lane_change: 8
+  desire_speed_intersection: 8
+  desire_speed_intersection_straight: 8
+  desire_speed_slow_down: 6
+  accelerate_up: 0.4
+  accelerate_down: 0.3
+  maximum_speed: 25
+  desire_speed_uturn: 5
+
+osm_map:
+  ways_filter: ["service"]
+  interpolation_max_distance: 10.0

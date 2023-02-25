@@ -1,0 +1,15 @@
+<launch>
+    <master auto="start"/>
+    <!-- yueyawan.osm
+     dianyuan.osm
+     centernet.osm 
+     sjtu_dongqu.osm  -->
+	<!-- <node name="osm_map_rviz" pkg="rviz" type="rviz" args="-d $(find osm_map_rviz)/rviz/osm_map_rviz.rviz" required="true"/> -->
+	<node pkg="osm_map_rviz" name="osm_rviz_node" type="osm_map_rviz_node" output="screen">
+		<param name="osm_map_path" value="$(find osm_parser)/data/sjtu_south_all.osm"/>
+		<!-- <param name="osm_ways_filter" value="["service"]"/> -->
+		<param name="osm_interpolation_max_distance" value="10.0"/>
+
+		<param name="localization_replace" value="false"/>
+	</node>
+</launch>

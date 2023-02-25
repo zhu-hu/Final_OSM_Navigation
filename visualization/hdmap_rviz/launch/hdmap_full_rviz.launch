@@ -1,0 +1,13 @@
+<launch>
+	<node pkg="hdmap_rviz" name="full_rviz_node" type="full_rviz_node" output="screen">
+		<param name="frame" value="world"/>
+		<rosparam file="$(find configs)/common/common_params.yaml" command="load" />
+		<rosparam file="$(find configs)/localization/localization/localization.yaml" command="load"/>
+		<param name="map_storage_path" value="$(find hdmap)/data/"/>
+		<param name="publish_frequency" value="0.5"/>
+		<param name="publish_stop_line" value="1"/>
+		<param name="publish_boundary" value="1"/>
+		<param name="publish_center_line" value="1"/>
+		<param name="publish_junction_line" value="1"/>
+	</node>
+</launch>

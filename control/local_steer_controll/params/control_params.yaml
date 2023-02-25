@@ -1,0 +1,19 @@
+Min_ref_speed: 10.0
+K_ref_0_20: 0.5
+Kp_error: 0.25
+Ki_error: 0.05
+filter_param: 0.6
+Kp_wheel: 9167.3
+wheel_base: 1.60
+wheel_max: 4300
+wheel_zero: 0
+
+min_ref_speed: 2.0
+K_ref: 0.5
+K_alpha: 0.7
+base_reference_dis: 5.0
+
+#自动驾驶时的最大车速
+max_velocity: 3.0  #scale : m/s
+min_velocity: 1.0  #scale : m/s
+

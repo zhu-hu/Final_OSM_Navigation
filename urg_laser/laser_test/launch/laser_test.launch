@@ -1,0 +1,12 @@
+<launch>
+
+  <node name="laser_test_node" pkg="laser_test" type="laser_test_node" output="screen">
+    <!-- 角度零位偏置,单位度 -->
+    <param name="_angle_zero_bias_degree" value="-1.6"/>
+    <param name="min_dis" value="0.7"/>
+    <param name="max_dis" value="1.1"/>
+    <!-- 角度最大值,单位rad -->
+    <param name="max_fabs_angle" value="0.8"/>
+  </node>
+
+</launch>

@@ -1,0 +1,7 @@
+<!-- -->
+<launch>
+    <node pkg="cmd2e100can" type="cmd2e100can" name="cmd2e100can" output="screen"> 
+        <param name="auto_speed" type="bool" value="true"/>
+        <param name="auto_steer" type="bool" value="false"/>
+    </node>
+</launch>

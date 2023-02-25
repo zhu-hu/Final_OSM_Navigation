@@ -1,0 +1,32 @@
+<!-- pplqr_back_controller -->
+<launch>
+	<node pkg="pplqr_back_controller" type="pplqr_back_controller_node" name="pplqr_back" output="screen">
+		<param name="SizeParam_L1" value="1.62"/>
+        <param name="SizeParam_L2" value="2.04"/>
+        <param name="SizeParam_M1" value="0.57"/>
+        <param name="angle_weight" value="1.0"/>
+        <param name="steer_weight" value="1.0"/>
+        <param name="speed_weight" value="1.0"/>
+        <param name="look_ahead_dis" value="4.0"/>
+        <param name="Kp" value="0.0"/>
+        <param name="tolerance" value="0.00001"/>
+        <param name="max_iteration" value="300"/>
+        <param name="filter_param" value="1.0"/>
+        <param name="max_wheel_degree" value="4500.0"/>
+        <param name="desired_v" value="-1.0"/>
+
+        <!--为true表示测试第二级控制器，fixed_desired_beta是期望的beta值-->>
+        <param name="lqr_test" value="false"/>
+        <!--向左为正，向右为负　scale:rad　1rad = 57.3degree-->
+        <param name="fixed_desired_beta" value="0.6"/>
+        <!--能够设置的beta绝对值的最大值-->
+        <param name="max_fabs_beta" value="0.8"/>
+
+        <param name="use_pid" value="false"/>
+        <param name="PID_Kp" value="0.5"/>
+        <param name="PID_Ki" value="0.05"/>
+        <param name="PID_anti_i_coeff" value="0.5"/>
+        <param name="PID_max_error_sum" value="0.05"/>
+
+	</node>
+</launch>

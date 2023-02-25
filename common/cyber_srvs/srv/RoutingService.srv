@@ -1,0 +1,7 @@
+Header header
+cyber_msgs/LaneWaypoint[] waypoint
+cyber_msgs/LaneSegement[] blacklisted_lane
+---
+Header header
+cyber_msgs/LaneWaypoint[] planned_waypoint
+float64 measurement

@@ -1,0 +1,11 @@
+osm_parser:
+  # Parser's params
+  interpolation_max_distance: 10.0 # Max distance between two nodes of orientated graph
+  filter_of_ways: ["service"]         # Filter for parser. Parse only routes, which have value on the list
+                                # If value is all, then parse all routes
+
+  source_id: 63  #planner start point id
+
+  target_id: 25  #planner end point id 100
+
+  direction: 3.0 #start point direction

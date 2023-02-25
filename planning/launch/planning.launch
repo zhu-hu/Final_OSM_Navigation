@@ -1,0 +1,12 @@
+<!-- Routing Server -->
+<launch>
+	<node pkg="planning" type="planning_node" name="Planing" output="screen">
+    <rosparam file="$(find configs)/common/common_params.yaml" command="load"/>
+    <rosparam file="$(find configs)/planning/planning_params.yaml" command="load"/>
+	<rosparam file="$(find configs)/localization/localization/localization.yaml" command="load"/>
+    <rosparam file="$(find configs)/perception/perception_params.yaml" command="load"/>
+	<param name="map_storage_path" value="$(find hdmap)/data/"/>
+	<param name="map_path" value="$(find planning)/data/"/>
+	<param name="osm_map_path" value="$(find osm_parser)/data/sjtu_south_all.osm"/>
+	</node>
+</launch>

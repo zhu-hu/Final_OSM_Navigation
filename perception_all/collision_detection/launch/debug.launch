@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="collision_detection" type="collision_detection" name="collision_detection" output="screen">
+      <param name="debug" type="bool" value="true" />
+      <rosparam file="$(find collision_detection)/config/collision_detection_params.yaml" command="load"/>      
+      <rosparam file="$(find lidar_perception)/config/perception_params.yaml" command="load" />
+    </node>
+    <node pkg="rviz" type="rviz" name="rviz_collision_detection" args="-d $(find collision_detection)/rviz/run.rviz" output="screen" />
+</launch>

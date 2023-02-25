@@ -1,0 +1,26 @@
+<launch>
+    <!--lidar perception module-->
+    <node pkg="lidar_perception" type="lidar_perception_node" name="lidar_perception_node" output="screen">
+        <!-- topic input -->
+        <param name="in_point_cloud_topic" type="str" value="/driver/livox/point_cloud" />
+        <param name="in_localization_topic" type="str" value="/localization/estimation" />
+        <!-- topic output -->
+        <param name="out_local_grid_map_topic" type="str" value="/perception/local_grid_map" />
+        <param name="out_global_objects_topic" type="str" value="/perception/global_objects" />
+        <!-- debug parameters, set to true only when debugging -->
+        <param name="publish_local_points" type="bool" value="false" />
+        <param name="out_local_points_topic" type="str" value="/perception/local_points" />
+        <param name="publish_global_points" type="bool" value="true" />
+        <param name="out_global_points_topic" type="str" value="/perception/global_points" />
+        <!-- parameters from parameters.yaml file -->
+        <rosparam file="$(find configs)/perception/perception_params.yaml" command="load" />
+    </node>
+    <!--lidar visualize module-->
+    <node pkg="lidar_visualize" type="global_visualize_node" name="global_visualize_node" output="screen" />
+    <!--tiggo description-->
+    <include file="$(find tiggo_description)/launch/display.launch" />
+    <!--grid map visualize-->
+    <include file="$(find grid_map_vis)/launch/run.launch" />
+    <!--rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find lidar_visualize)/rviz/global_visualize.rviz" output="screen" />
+</launch>

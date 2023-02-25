@@ -1,0 +1,13 @@
+<launch>
+
+    <param name = "height_offset" type="double" value="0.0"/>
+    <param name = "gird_map_x_min" type="double" value="-10.00"/>
+    <param name = "gird_map_x_max" type="double" value="30.00"/>
+    <param name = "gird_map_y_min" type="double" value="-10.00"/>
+    <param name = "gird_map_y_max" type="double" value="10.00"/>
+    <param name = "gird_map_pixel" type="double" value="10"/>
+    <node pkg="lidar_perception_free_space" name="lidar_perception_free_space" type="lidar_perception_free_space_node" output="screen"/>
+    <node name="rviz_free_space" pkg="rviz" type="rviz" args="-d $(find lidar_perception_free_space)/fs.rviz" />
+
+</launch>
+<!-- launch-prefix="gdb -ex run - -args" -->

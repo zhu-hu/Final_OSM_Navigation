@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot
+  name="tiggo_description">
+  <link name="base_link">
+    <visual>
+      <origin xyz="-1 0 0" rpy="0 0 1.57" />
+      <geometry>
+        <mesh filename="package://tiggo_description/meshes/car_sjtu.stl" scale="3.25 2 6"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.2734375 0.5078125 0.703125 1" />
+      </material>
+    </visual>
+  </link>
+</robot>
